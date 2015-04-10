@@ -1,0 +1,98 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    -  'bin/*'
+    -  'db/**/*'
+    -  'vendor/bundle/**/*'
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+#TODO:
+#Metrics/AbcSize:
+#Max:36
+
+Metrics/ClassLength:
+  Max: 500
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/LineLength:
+  Enabled: false
+#Max:200
+
+Metrics/MethodLength:
+  Max: 30
+
+Rails/DefaultScope:
+  Enabled: false
+
+Rails/Delegate:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+#TODO:最終的にドキュメント書きたい
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyLines:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/EmptyLinesAroundMethodBody:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+#MaxLineLength:80
+
+Style/Lambda:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/TrailingComma:
+  Enabled: false
+#EnforcedStyleForMultiline:comma
+
+Style/WordArray:
+  Enabled: false
