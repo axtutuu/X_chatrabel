@@ -8,11 +8,27 @@ class ChatsController < ApplicationController
     chat = Chat.new(create_params)
     chat.save
 
-    redirect_to chats_path(room_id: chat.room_id)
+    Pusher['general_channel'].trigger('chat_event', {
+      message: chat.message
+    })
+
+    render :text => 'OK', :status => 200
+  end
+
+  # TODO: 現在不使用
+  def post
+    chat = Chat.new(create_params)
+    chat.save
+
+    Pusher['general_channel'].trigger('chat_event', {
+      message: params[:message],
+      name: current_user.family_name
+    })
+    render :text => 'OK', :status => 200
   end
 
   private
   def create_params
-    params.require(:chat).permit(:message, :room_id).merge(user_id: current_user.id)
+    params.permit(:message, :room_id).merge(user_id: current_user.id)
   end
 end
