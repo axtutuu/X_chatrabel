@@ -33,6 +33,7 @@ group :default do
   gem 'therubyracer'
   gem 'twitter-bootstrap-rails'
   gem 'bootstrap-material-design', '0.1.4'
+  gem 'websocket-rails'
 end
 
 group :development, :test do

@@ -1,0 +1,10 @@
+<h1>want to start chat?</h1>
+<p><%= @user.email%></p>
+
+<%= form_for(@room) do |f| %>
+  <%= f.hidden_field :name, value: "personal chat" %>
+  <%= f.fields_for :user_rooms do |i| %>
+      <%= i.hidden_field :user_id, value: @user.id %>
+    <% end %>
+  <%= f.submit 'start chat' %>
+<% end %>

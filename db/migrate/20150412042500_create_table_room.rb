@@ -1,6 +1,6 @@
-class CreateChatRooms < ActiveRecord::Migration
+class CreateTableRoom < ActiveRecord::Migration
   def change
-    create_table :chat_rooms do |t|
+    create_table :rooms do |t|
       t.string :name
 
       t.timestamps null: false

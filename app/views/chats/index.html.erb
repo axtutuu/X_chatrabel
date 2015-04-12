@@ -1,0 +1,7 @@
+<p><%= @room.name %></p>
+<%= render @room.chats %>
+<%= form_for(@chat) do |f| %>
+  <%= f.text_field :message, placeholder: "メッセージを入力" %>
+  <%= f.hidden_field :room_id, value: params[:room_id] %>
+  <%= f.submit "送信" %>
+<% end %>

@@ -38,5 +38,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # devise用の設定
   config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
+
+  # websocket用の設定
+  config.middleware.delete Rack::Lock
 end
