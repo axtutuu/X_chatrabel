@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def add_params
     devise_parameter_sanitizer.for(:sign_up).push(:family_name, :first_name, :prefecture_id, :city_id, :avatar)
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end
