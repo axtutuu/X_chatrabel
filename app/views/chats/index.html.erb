@@ -1,7 +1,6 @@
 <p><%= @room.name %></p>
 <%= render @room.chats %>
 <div id="chat" data-uri="<%= Settings.websocket_rails.url %>:<%= Settings.websocket_rails.port %>/websocket"></div>
-
 <div>
  <form class="form-horizontal">
    <input type="text" class="form-control" id="msgbody" />

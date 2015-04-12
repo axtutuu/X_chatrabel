@@ -17,7 +17,8 @@ class SocketController < WebsocketRails::BaseController
     chat.save ? 'success' : 'error'
 
     # コネクションのあるユーザー全てにメッセージを送る
-    broadcast_message :new_message, message
+    room_id = message[:room_id]
+    WebsocketRails["#{room_id}"].trigger(:new_message, message)
   end
 
   private

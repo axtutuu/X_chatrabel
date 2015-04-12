@@ -4,7 +4,9 @@
 class @ChatClass
   constructor: (url, useWebsocket) ->
     # これがソケットのディスパッチャー
+    room_id = $('#room_id').val()
     @dispatcher = new WebSocketRails(url, useWebsocket)
+    @channel = @dispatcher.subscribe(room_id)
     console.log(url)
     # イベントを監視
     @bindEvents()
@@ -14,7 +16,8 @@ class @ChatClass
     $('#send').on 'click', @sendMessage
     # サーバーからnew_messageを受け取ったらreceiveMessageを実行
     @dispatcher.bind 'new_message', @receiveMessage
- 
+    @channel.bind 'new_message', @receiveMessage
+
   sendMessage: (event) =>
     # サーバ側にsend_messageのイベントを送信
     # オブジェクトでデータを指定
