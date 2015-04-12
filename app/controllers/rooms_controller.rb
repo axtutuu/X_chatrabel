@@ -1,8 +1,9 @@
 class RoomsController < ApplicationController
   def new
     @user = User.find(params[:id])
+    room_ids = @user.user_rooms.pluck(:id)
+    @user_room = UserRoom.where(room_id: room_ids).where(user_id: current_user.id).first
     @room = Room.new
-    @room.user_rooms.build
   end
 
   def create
