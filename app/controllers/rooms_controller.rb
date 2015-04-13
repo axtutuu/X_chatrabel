@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
     room_ids = @user.user_rooms.pluck(:id)
     @user_room = UserRoom.where(room_id: room_ids).where(user_id: current_user.id).first
     @room = Room.new
+    @room.user_rooms.build
   end
 
   def create
@@ -19,6 +20,6 @@ class RoomsController < ApplicationController
 
   private
   def create_params
-    params.require(:room).permit(:name, user_rooms_attributes: [:user_id])
+    params.require(:room).permit(:name, user_rooms_attributes: :user_id)
   end
 end

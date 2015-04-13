@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   belongs_to :prefecture
   belongs_to :city
 
-  has_many :rooms, through: :rooms
+  has_many :rooms, through: :user_rooms
   has_many :user_rooms
 
   devise :database_authenticatable, :registerable,
