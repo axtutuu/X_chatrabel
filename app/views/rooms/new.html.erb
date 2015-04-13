@@ -18,7 +18,7 @@
         <%= f.fields_for :user_rooms do |i| %>
             <%= i.hidden_field :user_id, value: @user.id %>
           <% end %>
-        <%= f.submit 'start chat' %>
+        <%= f.submit 'start chat', class: 'btn btn-success btn-block btn-large' %>
       <% end %>
     <% end %>
   </div>
