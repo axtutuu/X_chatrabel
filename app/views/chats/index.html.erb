@@ -1,5 +1,5 @@
 <body style="background-color: #F7F8E0;">
-  <h5 style="text-align: center;"><%= @passive_user.user.family_name %>さんとのチャットルーム</h5>
+<h5 style="text-align: center;"><%= @passive_user.user.family_name %> <%= @passive_user.user.first_name %></h5>
   <div style="margin-bottom: 220px;">
     <div class="chats">
       <%= render @room.chats %>

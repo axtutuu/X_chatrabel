@@ -11,6 +11,7 @@ class @ChatClass
     console.log(url)
     # イベントを監視
     @bindEvents()
+    @scroll()
 
   bindEvents: () =>
     # 送信ボタンが押されたらサーバへメッセージを送信
@@ -36,11 +37,11 @@ class @ChatClass
       $('#chat').append this.meHtml(message)
     else
       $('#chat').append this.otherHtml(message)
+    @scroll()
 
   meHtml: (message) ->
     return """
       <div class="box_right" >
-          <p><span style="color: blue;">#{message.name}</span></p>
           <div class="arrow_box_right">
             <p class="message">#{message.body}</p>
           </div>
@@ -59,6 +60,12 @@ class @ChatClass
       <div class="clear"></div>
     """
 
+  scroll: () ->
+    ds = $(document).height()
+    speed = 500
+    $("html,body").stop().animate({"scrollTop":ds},speed)
 
   $ ->
     window.chatClass = new ChatClass($('#chat').data('uri'), true)
+
+
