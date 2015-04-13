@@ -1,3 +1,131 @@
 // Place all the styles related to the chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// -----------------------------------------------------------------
+//メッセージbox 相手
+// -----------------------------------------------------------------
+.arrow_box_left {
+	position: relative;
+	background: #FFF;
+	border: 1px solid #FFF;
+  padding: 3px;
+  border-radius: 10px;        /* CSS3草案 */  
+  -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+  -moz-border-radius: 10px;   /* Firefox用 */  
+}
+.arrow_box_left:after, .arrow_box_left:before {
+	top: 100%;
+	left: 30%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box_left:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #FFF;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.arrow_box_left:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #FFF;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.box_left {
+  width: 50%;
+  float: left;
+}
+
+
+// -----------------------------------------------------------------
+//メッセージbox 自分
+// -----------------------------------------------------------------
+.box_right {
+  text-align: right;
+  width: 50%;
+  float: right;
+  word-wrap:break-word;
+}
+.arrow_box_right {
+	position: relative;
+	background: #81F7F3;
+	border: 1px solid #81F7F3;
+  padding: 3px;
+  border-radius: 10px;        /* CSS3草案 */  
+  -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+  -moz-border-radius: 10px;   /* Firefox用 */  
+}
+.arrow_box_right:after, .arrow_box_right:before {
+	top: 100%;
+	right: 30%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box_right:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #81F7F3;
+	border-width: 10px;
+	margin-right: -10px;
+}
+.arrow_box_right:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #c2e1f5;
+	border-width: 11px;
+	margin-right: -11px;
+}
+
+// ------------------------------------------------------------
+//共通処理
+// ------------------------------------------------------------
+
+.clear {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.message {
+  padding: 2px;
+}
+
+.message_area {
+  width: 100%;
+  position: fixed !important;
+  position: absolute;
+  bottom: 0px;
+  background-color: #A4A4A4;
+  height: 35px;
+}
+.text_box {
+  height: 40px;
+  width: 100%;
+}
+.form {
+  margin: auto;
+  width: 70%;
+}
+
+.textarea {
+  width: 70%;
+  float: left;
+}
+
+.chat_button {
+  float: right;
+}
+
+.chats {
+  width: 95%;
+  margin: auto;
+}

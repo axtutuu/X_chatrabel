@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def new
     @user = User.find(params[:id])
+    # Hack: validationの効率化検討
     room_ids = @user.user_rooms.pluck(:id)
     @user_room = UserRoom.where(room_id: room_ids).where(user_id: current_user.id).first
     @room = Room.new
@@ -19,9 +20,5 @@ class RoomsController < ApplicationController
   private
   def create_params
     params.require(:room).permit(:name, user_rooms_attributes: [:user_id])
-  end
-
-  def find_room
-    Room.includes(:users).where("users.id = ?", current_user.id).references(:users)
   end
 end

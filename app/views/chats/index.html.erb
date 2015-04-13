@@ -1,11 +1,30 @@
+<body style="background-color: #F7F8E0;">
 <p><%= @room.name %></p>
-<%= render @room.chats %>
-<div id="chat" data-uri="<%= Settings.websocket_rails.url %>:<%= Settings.websocket_rails.port %>/websocket"></div>
-<div>
- <form class="form-horizontal">
-   <input type="text" class="form-control" id="msgbody" />
-   <input type="hidden" class="form-control" id="user_name" value="<%= current_user.family_name %>" />
-   <input type="hidden" class="form-control" id="room_id" value="<%= @room.id %>" />
-   <input type="button" class="btn btn-primary" id="send" value="送信"/>
- </form>
+<div style="margin-bottom: 220px;">
+  <div class="chats">
+    <%= render @room.chats %>
+
+    <div id="chat" data-uri="<%= Settings.websocket_rails.url %>:<%= Settings.websocket_rails.port %>/websocket"></div>
+
+  </div>
 </div>
+
+  <div id="current_user_id" style="display:none;"><%= current_user.id %></div>
+<div class="message_area">
+   <form>
+       <input type="hidden" id="user_name" value="<%= current_user.family_name %>" />
+       <input type="hidden" id="room_id" value="<%= @room.id %>" />
+       <input type="hidden" id="user_id" value="<%= current_user.id %>" />
+     <div class="form">
+        <div class="textarea">
+          <textarea id="msgbody" class="text_box" rows="5" placeholder="メッセージ"></textarea>
+        </div>
+        <div class="chat_button">
+          <input type="button" class="btn btn-primary" id="send" value="送信"/>
+        </div>
+        <div class="clear"></div>
+    </div>
+  </form>
+</div>
+
+</body>

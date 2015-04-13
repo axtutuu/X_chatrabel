@@ -18,10 +18,13 @@ group :default do
   gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.2'
   gem 'therubyracer'
   gem 'twitter-bootstrap-rails'
+  gem 'less-rails'
+  gem 'execjs'
   gem 'bootstrap-material-design', '0.1.4'
   gem 'websocket-rails'
   gem 'pusher'
   gem 'settingslogic'
+  gem 'simple_form', '~> 3.1.rc1'
 end
 
 group :development, :test do
