@@ -1,1 +1,19 @@
-<p><%= user.family_name %>  <%= link_to "chat", new_room_path(id: user.id) %></p>
+<div class="wrap">
+  <a href="/rooms/new?id=<%= user.id %>">
+  <div class="contents">
+    <div class="left">
+      <img src="<%= user.avatar.url(:medium) %>">
+      <div class="info">
+          <%= user.family_name %>
+          <%= user.first_name %><br>
+          <%= user.prefecture.name %>
+          <%= user.city.name %>
+      </div>
+    </div>
+    <div class="right">
+      <div class="icono-comment"></div>
+    </div>
+        <div class="clear"></div>
+    </div>
+  </div>
+</div>

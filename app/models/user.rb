@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   has_many :chats
   has_one :user_detail
 
-  has_one :prefecture
-  has_one :city
+  belongs_to :prefecture
+  belongs_to :city
 
   has_many :rooms, through: :rooms
   has_many :user_rooms
