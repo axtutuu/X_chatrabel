@@ -65,7 +65,25 @@ class @ChatClass
     speed = 500
     $("html,body").stop().animate({"scrollTop":ds},speed)
 
-  $ ->
-    window.chatClass = new ChatClass($('#chat').data('uri'), true)
 
+  reconnecter: =>
+    time = this.generateInterval()
+    chatclass = this
+    setTimeout (->
+      chatclass.reconnectWebsocket(chatclass)
+      return
+    ),time 
+    return
 
+  reconnectWebsocket: (chatclass) =>
+    if chatclass.dispatcher.state == 'connected'
+    else if chatclass.dispatcher.state == 'disconnected'
+      chatclass.dispatcher.reconnect()
+    chatclass.reconnecter()
+
+  generateInterval: () =>
+    maxInterval = 1000
+    Math.random() * maxInterval
+
+  window.onload = $ ->
+     window.chatClass = new ChatClass($('#chat').data('uri'), true)

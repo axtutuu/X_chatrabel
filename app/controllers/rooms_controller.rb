@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   def new
     @user = User.find(params[:id])
     # Hack: validationの効率化検討
-    room_ids = @user.user_rooms.pluck(:id)
+    room_ids = @user.user_rooms.pluck(:room_id)
     @user_room = UserRoom.where(room_id: room_ids).where(user_id: current_user.id).first
     @room = Room.new
     @room.user_rooms.build

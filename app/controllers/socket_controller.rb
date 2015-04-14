@@ -3,11 +3,8 @@ class SocketController < WebsocketRails::BaseController
     logger.debug("initialize chat controller")
   end
 
-  def action
-  end
-
   def connect_user
-    logger.debug("'接続中---------------------------------'")
+    logger.debug("接続中---------------------------------")
   end
 
   def new_message

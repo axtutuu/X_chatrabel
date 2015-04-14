@@ -11,7 +11,7 @@
     <div class="clear"></div>
 
     <% if @user_room.present? %>
-        <%= link_to 'start chat', chats_path(room_id: @user_room.room_id), {class: 'btn btn-success btn-block btn-large'} %>
+      <%= link_to 'start chat', chats_path(room_id: @user_room.room_id), {class: "btn btn-success btn-block btn-large", target: ["_blank"] }%>
     <% else %>
       <%= form_for(@room) do |f| %>
         <%= f.hidden_field :name, value: "personal chat" %>
