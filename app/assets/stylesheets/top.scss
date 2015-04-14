@@ -4,10 +4,14 @@
 
 .wrap {
   width: 100%;
-  height: 70px;
-  background-color: #F7F8E0;
-  border: 1px #FFFF00 solid;
+  height: 100px;
+  background-color: #FFF;
   position:relative;
+  box-shadow:0px 0px 10px 3px #c0c0c0;
+  -moz-box-shadow:0px 0px 10px 3px #c0c0c0;
+  -webkit-box-shadow:0px 0px 10px 3px #c0c0c0;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .wrap a {
@@ -20,7 +24,7 @@
 
 .icono-comment {
 	color: #00FF40;
-	transform: scale(1);
+	transform: scale(2);
 }
 
 .right {
@@ -47,7 +51,7 @@
 }
 
 .list {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 70px;
+  max-height: 70px;
   margin-right: 5px;
 }
