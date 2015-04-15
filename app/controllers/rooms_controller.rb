@@ -1,4 +1,10 @@
 class RoomsController < ApplicationController
+
+  def index
+    room_ids = current_user.user_rooms.pluck(:room_id)
+    @user_rooms = UserRoom.where(room_id: room_ids).where.not(user_id: current_user.id)
+  end
+
   def new
     @user = User.find(params[:id])
     # Hack: validationの効率化検討

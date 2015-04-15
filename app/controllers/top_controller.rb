@@ -1,5 +1,10 @@
 class TopController < ApplicationController
   def index
-    @users = User.where.not(id: current_user.id)
+    @search = User.where.not(id: current_user.id).search(params[:q])
+    @users = @search.result
+  end
+
+  def search
+    @search = User.where.not(id: current_user.id).search(params[:q])
   end
 end

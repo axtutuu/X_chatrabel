@@ -1,0 +1,29 @@
+<body style="background-color: #F7F8E0;">
+  <div class="form_wrap">
+  <h1 style="text-align: center;">Find new people</h1>
+    <div class="form_contents">
+      <%= search_form_for @search, url: '/', html: {class: 'form-horizontal'} do |f| %>
+        <div class="control-group">
+          <label class="control-label" for="family_name_cont">Name</label>
+          <div class="controls">
+            <%= f.text_field :family_name_cont %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="prefecture_id">都道府県</label>
+          <div class="controls">
+            <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, {prompt: ''} %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="city_id">市区町村</label>
+          <div class="controls"> <%= f.collection_select :city_id_eq, City.all, :id, :name, {prompt: ''} %></div>
+        </div>
+
+        <%= f.submit 'search', class: 'btn btn-success btn-block btn-large' , style: 'margin-top: 50px;'%>
+      <% end %>
+    </div>
+  </div>
+</body>
