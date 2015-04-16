@@ -1,6 +1,6 @@
 <body style="background-image: url(<%= asset_path "img01.jpg"%>);" class="bk-image">
   <div class="login">
-  <h2 style="color: #FFF; text-align: center;">Log in</h2>
+  <h2 style="color: #FFF; text-align: center;"><img src="<%= asset_path "logo.png" %>"></h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
       <div class="field">
