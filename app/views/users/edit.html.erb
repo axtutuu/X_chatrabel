@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :city, {for: "city"} %><br />
-          <div class="controls"><%= render partial: 'shared/form_cities', locals: {prefecture_id: City.where(id: current_user.city_id) } %></div>
+          <div class="controls"><%= render partial: 'shared/form_cities', locals: {prefecture_id: City.find(current_user.city.prefecture_id)} %></div>
   </div>
 
   <div class="field">
