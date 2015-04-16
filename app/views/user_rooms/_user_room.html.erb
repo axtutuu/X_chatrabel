@@ -8,7 +8,13 @@
           <%= user_room.user.first_name %><br>
           <%= user_room.user.prefecture.name %>
           <%= user_room.user.city.name %><br>
-          <blockquote><small><%= user_room.room.chats.last.message %></small></blockquote>
+          <blockquote><small>
+              <% if user_room.room.chats.present? %>
+                <%= user_room.room.chats.last.message %>
+              <% else %>
+                  no messages
+              <% end %>
+            </small></blockquote>
       </div>
     </div>
     <div class="right">
