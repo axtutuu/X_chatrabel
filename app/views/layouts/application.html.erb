@@ -38,23 +38,27 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Chatravel</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "search", "/search"  %></li>
-            <li><%= link_to "chats", "/rooms"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
+    <% if current_user.present? %>
+      <div class="navbar navbar-default navbar-static-top" style="background-color: #FFF;">
+        <div class="container">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="<%= asset_path "logo.png" %>" width="150px" style="margin-top: -8px;"></a>
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav" >
+              <li><a style="font-weight: bold;" href="/search">search</a></li>
+              <li><a style="font-weight: bold;" href="/rooms">chats</a></li>
+              <li><a style="font-weight: bold;" href="/users/<%= current_user.id %>">setting</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
+
       <%= bootstrap_flash %>
       <%= yield %>
   </body>

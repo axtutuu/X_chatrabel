@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: {medium: '300x300>', thumb: '100x100>'}
   validates_attachment_content_type :avatar, content_type: %w(image/jpeg image/jpg image/png)
 
+  validates_attachment :avatar, presence: true
+
   private
   # TODO: 関連テーブルの作成は続きで
   #def build_user_detail

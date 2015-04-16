@@ -1,0 +1,16 @@
+<body style="background-color: #F7F8E0;">
+  <div class="room_wrap">
+    <div class="show_left">
+      <img src="<%= @user.avatar.url(:medium) %>" class="show">
+    </div>
+    <div class="show_right">
+      <h4><%= @user.family_name %> <%= @user.first_name %></h4>
+      <h5><%= @user.prefecture.name %> <%= @user.city.name %></h5>
+    </div>
+    <div class="clear"></div>
+    <%= link_to 'edit', edit_user_path(id: current_user.id), class: 'btn btn-success btn-block btn-large' %>
+    <div style="width: 40%; margin: 30px auto;">
+      <%= link_to 'log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-block' %>
+    </div>
+  </div>
+</body>

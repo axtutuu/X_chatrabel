@@ -1,0 +1,30 @@
+<%= form_for current_user do |f| %>
+  <div class="field">
+    <%= f.label :family_name, {for: "family_name"} %><br />
+    <%= f.text_field :family_name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name, {for: "first_name"} %><br />
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture, {for: "prefecture"} %><br />
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: 'form-control', id: 'user_prefecture'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city, {for: "city"} %><br />
+          <div class="controls"><%= render partial: 'shared/form_cities', locals: {prefecture_id: City.where(id: current_user.city_id) } %></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-success btn-block btn-large' %>
+  </div>
+<% end %>
