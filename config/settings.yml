@@ -18,7 +18,7 @@ production:
   websocket_rails:
     standalone: false
     url: chatravel.herokuapp.com/websocket
-    port:
+    port: process.env.PORT || 8080
     redis:
       host: localhost
       port: 6379
