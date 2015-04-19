@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 class @ChatClass
-  constructor: (url, useWebsocket) ->
+  constructor: ("http://chatravel.herokuapp.com/websocket", useWebsocket) ->
     # これがソケットのディスパッチャー
     room_id = $('#room_id').val()
     this.current_user_id = $('#current_user_id').text()
