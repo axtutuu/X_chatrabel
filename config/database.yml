@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: chatravel_production
-  username: chatravel
-  password: <%= ENV['CHATRAVEL_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: d7d78fde064e67
+  username: uohxmqoyhtaxgg
+  password: T9gWYNWzPUxW_OyMGvAdmBbY59
+  host: ec2-107-21-104-188.compute-1.amazonaws.com
