@@ -17,7 +17,7 @@ test:
 production:
   websocket_rails:
     standalone: false
-    url: chatravel.herokuapp.com/websocket
+    url: chatravel.herokuapp.com
     port:
     redis:
       host: localhost
