@@ -15,4 +15,11 @@ test:
   <<: *defaults
 
 production:
-  <<: *defaults
+  websocket_rails:
+    standalone: false
+    url: chatravel.herokuapp.com
+    port: 3000
+    redis:
+      host: localhost
+      port: 6379
+      db: 0
