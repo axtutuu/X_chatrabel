@@ -14,12 +14,11 @@ development:
 test:
   <<: *defaults
 
-uri = URI.parse(ENV["REDISTOGO_URL"])
 production:
   websocket_rails:
     standalone: false
     url: chatravel.herokuapp.com/websocket
-    port: uri.port
+    port: listen(process.env.PORT || 5000)
     redis:
       host: localhost
       port: 6379
